@@ -1,15 +1,14 @@
 var Weather = function() {
-  this.randomNumber = 10;
 };
 
 Weather.prototype.randomNumberGenerator = function(){
-  randomNumber = Math.floor((Math.random() * 10) + 1);
+  return Math.floor((Math.random() * 10) + 1);
 };
 
-Weather.prototype.randomConditions = function(randomNumber) {
-  if(randomNumber > 1 && randomNumber < 6) { 
-    "sunny"
+Weather.prototype.randomConditions = function() {
+  if(this.randomNumberGenerator > 1 && this.randomNumberGenerator < 6) { 
+    return "sunny";
   } else { 
-    "stormy"   
+    return "stormy";   
   }
 };
