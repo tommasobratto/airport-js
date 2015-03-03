@@ -1,9 +1,10 @@
 describe('weather', function() {
 
-  var weather = new Weather()
+  var weather = new Weather();
 
   it('can be sunny', function() {
-    expect(weather.randomConditions).toBe("sunny")
+    weather.randomNumberGenerator
+    expect(weather.randomConditions(randomNumber)).toEqual("sunny")
   });
 
 });
