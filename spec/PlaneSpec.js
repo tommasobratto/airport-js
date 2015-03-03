@@ -12,4 +12,9 @@ describe('plane', function() {
     expect(plane.isFlying).toBe(false)
   });
 
+  it("should be able to take off", function() {
+    plane.takeOff();
+    expect(plane.isFlying).toBe(true)
+  });  
+
 });
