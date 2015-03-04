@@ -1,18 +1,20 @@
 var Airport = function() {
-this.planes = [];
+  this.planes = [];
+  this.hangarCapacity = 3;
 };
 
 Airport.prototype.dock = function(plane) {
+  plane.land();
   this.planes.push(plane);
 };
 
 Airport.prototype.release = function(plane) {
+  plane.takeOff();
   this.planes.splice(plane);
 };
 
 Airport.prototype.isFull = function() { 
-  var hangarCapacity = 3;
-  if(this.planes.length === hangarCapacity) return true;
+  if(this.planes.length === this.hangarCapacity) return true;
 };
 
 Airport.prototype.isEmpty = function() {
