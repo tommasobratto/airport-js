@@ -1,14 +1,16 @@
 var Weather = function() {
+  this.conditions;
 };
 
-Weather.prototype.randomNumberGenerator = function(){
-  return Math.floor((Math.random() * 10) + 1);
-};
+// Weather.prototype.randomNumberGenerator = function() {
+//   return Math.floor((Math.random() * 10) + 1);
+// };
 
-Weather.prototype.randomConditions = function(randomNumberGenerator) {
-  if(this.randomNumberGenerator() > 1 && this.randomNumberGenerator() < 6) {
-    return "sunny"; 
+Weather.prototype.randomConditions = function() {
+  var randomNumber = Math.floor((Math.random() * 10) + 1);
+  if( randomNumber > 1 && randomNumber < 6) {
+    this.conditions = "sunny"; 
   } else { 
-    return "stormy";   
-  }
+    this.conditions = "stormy";   
+  } 
 };

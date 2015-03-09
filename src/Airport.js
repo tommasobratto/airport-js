@@ -3,14 +3,18 @@ var Airport = function() {
   this.hangarCapacity = 3;
 };
 
-Airport.prototype.dock = function(plane) {
-  plane.land();
-  this.planes.push(plane);
+Airport.prototype.dock = function(plane, weather) {
+  if(weather.conditions === "sunny") {
+    plane.land();
+    this.planes.push(plane);
+  };
 };
 
-Airport.prototype.release = function(plane) {
-  plane.takeOff();
-  this.planes.splice(plane);
+Airport.prototype.release = function(plane, weather) {
+  if(weather.conditions === "sunny") {
+    plane.takeOff();
+    this.planes.splice(plane);
+  }; 
 };
 
 Airport.prototype.isFull = function() { 
